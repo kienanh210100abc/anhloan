@@ -8,6 +8,7 @@ export default function Toolbar({
   setSelectMode,
   deleteSelected,
   importImages,
+  syncEnabled,
 }) {
   return (
     <Paper
@@ -26,7 +27,15 @@ export default function Toolbar({
         justifyContent="space-between"
         gap={1.6}
       >
-       
+        <Chip
+          label={syncEnabled ? "Dong bo online" : "Che do cuc bo"}
+          color={syncEnabled ? "success" : "default"}
+          variant={syncEnabled ? "filled" : "outlined"}
+          sx={{
+            alignSelf: { xs: "flex-start", md: "center" },
+            fontWeight: 600,
+          }}
+        />
 
         <Stack
           direction={{ xs: "column", sm: "row" }}
