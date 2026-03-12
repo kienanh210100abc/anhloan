@@ -32,6 +32,7 @@ export default function Toolbar({
           color={syncEnabled ? "success" : "default"}
           variant={syncEnabled ? "filled" : "outlined"}
           sx={{
+            display:"none",
             alignSelf: { xs: "flex-start", md: "center" },
             fontWeight: 600,
           }}
