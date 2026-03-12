@@ -1,0 +1,61 @@
+body {
+  margin: 0;
+  min-height: 100vh;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 90% 55% at 15% 8%, rgba(255, 209, 194, 0.44) 0%, transparent 65%),
+    radial-gradient(ellipse 58% 42% at 84% 86%, rgba(161, 193, 174, 0.28) 0%, transparent 54%),
+    radial-gradient(ellipse 52% 64% at 56% 34%, rgba(255, 233, 201, 0.19) 0%, transparent 52%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.app-shell {
+  position: relative;
+  z-index: 1;
+}
+
+.gallery-masonry {
+  columns: 4;
+  column-gap: 16px;
+}
+
+@media (max-width:1100px) {
+  .gallery-masonry { columns:3; }
+}
+
+@media (max-width:740px) {
+  .gallery-masonry { columns:2; }
+}
+
+@media (max-width:520px) {
+  .gallery-masonry {
+    columns: 1;
+    column-gap: 0;
+  }
+}
+
+.gallery-item {
+  break-inside: avoid;
+  margin-bottom: 16px;
+}
+
+@media (max-width:520px) {
+  .gallery-item {
+    margin-bottom: 12px;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(183, 93, 74, 0.3);
+  border-radius: 999px;
+}
